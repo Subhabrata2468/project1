@@ -1,0 +1,18 @@
+# TO BUILD THE DOCKER IMAGE
+docker image build -t $JOB_NAME:v1.BUILD_ID .
+
+
+# TO GIVE THE TAG TO DOCKER IMAGES
+docker image tag $JOB_NAME:v1.BUILD_ID subhabrata2003/$JOB_NAME:v1.BUILD_ID
+docker image tag $JOB_NAME:v1.BUILD_ID subhabrata2003/$JOB_NAME:latest
+
+
+# TO PUSH THE DOCKER IMAGES
+docker image push subhabrata2003/$JOB_NAME:v1.BUILD_ID
+docker image push subhabrata2003/$JOB_NAME:latest
+
+
+# TO REMOVE THE IMAGES
+docker image rmi $JOB_NAME:v1.BUILD_ID
+docker image rmi subhabrata2003/$JOB_NAME:v1.BUILD_ID
+docker image rmi subhabrata2003/$JOB_NAME:latest
