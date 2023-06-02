@@ -1,14 +1,15 @@
----# PLAYBOOK CREATED
+---
+- name: Manage Docker container and image
   hosts: owner
   user: root
   become: yes
   gather_facts: no
   connection: ssh
-  
+
   vars:
-    container_name: first_container    
+    container_name: first_container
     image_name: Subhabrata2468/job1:latest
-    
+
   tasks:
     - name: Stop the container
       docker_container:
@@ -19,7 +20,7 @@
 
     - name: Remove the container
       docker_container:
-        name: "{{ container_name }}"        
+        name: "{{ container_name }}"
         state: absent
       when: stopped_container is changed
 
@@ -31,7 +32,7 @@
     - name: Start the container
       docker_container:
         name: "{{ container_name }}"
-        image: "{{ image_name }}"        
+        image: "{{ image_name }}"
         state: started
         ports:
-        	- "9000:80"
+          - "9000:80"
