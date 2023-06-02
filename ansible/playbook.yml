@@ -1,5 +1,4 @@
 ---# PLAYBOOK CREATED
-- name: Manage Docker container and image
   hosts: owner
   user: root
   become: yes
