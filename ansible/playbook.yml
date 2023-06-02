@@ -1,6 +1,6 @@
 ---
 - name: Manage Docker container and image
-  hosts: owner
+  hosts: slave
   user: root
   become: yes
   gather_facts: no
