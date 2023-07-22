@@ -1,0 +1,22 @@
+---
+- name: Manage Docker container and image
+  hosts: slave
+  user: root
+  become: yes
+  gather_facts: no
+  connection: ssh
+
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+    container_name: first_container
+    image_name: subhabrata2003/project1:latest
+
+  tasks:
+  
+    - name: Start the container
+      docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+        ports:
+          - "9000:80"
