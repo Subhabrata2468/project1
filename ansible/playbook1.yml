@@ -9,7 +9,7 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
     container_name: first_container
-    image_name: subhabrata2003/devops_project_freestyle_1:latest
+    image_name: subhabrata2003/project1:latest
 
   tasks:
   
