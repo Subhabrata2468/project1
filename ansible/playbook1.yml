@@ -12,23 +12,10 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: Install Git on Debian/Ubuntu
-      apt:
-        name: git
-        state: present
-      when: ansible_os_family | default("") == "Debian"
-
-    - name: Install Git on Red Hat/CentOS
-      dnf:  # Use the dnf module for Red Hat-based distributions
-        name: git
-        state: present
-      when: ansible_os_family | default("") == "RedHat"
-
-    - name: Install Git on other systems (default)
+    - name: Install Git
       package:
         name: git
         state: present
-      when: ansible_os_family | default('')) == ''
       
     - name: Clone the GitHub repository
       git:
