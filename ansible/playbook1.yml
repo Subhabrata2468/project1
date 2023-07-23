@@ -12,10 +12,12 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: install git
-      package:
+    - name: Install a package using DNF
+      dnf:
         name: git
         state: present
+      become: true
+
         
     - name: Clone the GitHub repository
       git:
