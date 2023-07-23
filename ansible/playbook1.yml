@@ -11,7 +11,7 @@
     container_name: first_container
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
-   tasks:
+  tasks:
     - name: Install Git and update the OS
       apt:
         update_cache: yes
