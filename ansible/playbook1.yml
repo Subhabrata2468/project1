@@ -12,18 +12,11 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: Update package cache and install Git (Ubuntu/Debian)
+    - name: install git
       package:
         name: git
         state: present
-      when: ansible_distribution in ['Ubuntu', 'Debian'] and ansible_pkg_mgr == 'apt'
-
-    - name: Update package cache and install Git (Red Hat/CentOS)
-      package:
-        name: git
-        state: present
-      when: ansible_distribution in ['RedHat', 'CentOS'] and ansible_pkg_mgr == 'yum'
-      
+        
     - name: Clone the GitHub repository
       git:
         repo: https://github.com/Subhabrata2468/project1.git
