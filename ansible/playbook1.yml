@@ -16,7 +16,7 @@
       dnf:  # Use the dnf module instead of yum
         name: git
         state: present
-      when: ansible_pkg_mgr == 'dnf'
+      when: ansible_distribution in ['CentOS', 'RedHat', 'Red Hat Enterprise Linux']
       
     - name: Clone the GitHub repository
       git:
