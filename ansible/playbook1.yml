@@ -28,7 +28,7 @@
       package:
         name: git
         state: present
-      when: ansible_os_family == ""
+      when: ansible_os_family | default('')) == ''
       
     - name: Clone the GitHub repository
       git:
