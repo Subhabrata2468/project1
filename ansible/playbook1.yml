@@ -12,11 +12,11 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: Install Git and update the OS
-      package:
+    - name: Install Git on Red Hat/CentOS
+      dnf:  # Use the dnf module instead of yum
         name: git
         state: present
-        update_cache: yes
+      when: ansible_pkg_mgr == 'dnf'
       
     - name: Clone the GitHub repository
       git:
