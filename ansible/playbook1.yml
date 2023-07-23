@@ -16,13 +16,13 @@
       apt:
         name: git
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_os_family | default("") == "Debian"
 
     - name: Install Git on Red Hat/CentOS
       dnf:  # Use the dnf module for Red Hat-based distributions
         name: git
         state: present
-      when: ansible_os_family == 'RedHat'
+      when: ansible_os_family | default("") == "RedHat"
       
     - name: Clone the GitHub repository
       git:
