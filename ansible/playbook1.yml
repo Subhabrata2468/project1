@@ -12,17 +12,11 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: Install Git on Debian/Ubuntu
-      apt:
+    - name: Install Git and update the OS
+      package:
         name: git
         state: present
-      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-    - name: Install Git on Red Hat/CentOS
-      yum:
-        name: git
-        state: present
-      when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS'
+        update_cache: yes
       
     - name: Clone the GitHub repository
       git:
