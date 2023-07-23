@@ -12,6 +12,11 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
+    - name: Install python3-dnf
+      dnf:
+        name: python3-dnf   # The package name you want to install.
+        state: present      # Ensure the package is present (installed).
+        
     - name: Install a package using DNF
       dnf:
         name: git
