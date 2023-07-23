@@ -12,18 +12,17 @@
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
   tasks:
-    - name: Update package cache (ensure Python 3's dnf module is used)
-      package:
-        name: '*'
-        state: latest
-      # Uncomment the appropriate when condition based on your target hosts' OS.
-      # when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
-      when: ansible_pkg_mgr == 'dnf'
-      
-    - name: Install Git
+    - name: Update package cache and install Git (Ubuntu/Debian)
       package:
         name: git
         state: present
+      when: ansible_distribution in ['Ubuntu', 'Debian'] and ansible_pkg_mgr == 'apt'
+
+    - name: Update package cache and install Git (Red Hat/CentOS)
+      package:
+        name: git
+        state: present
+      when: ansible_distribution in ['RedHat', 'CentOS'] and ansible_pkg_mgr == 'yum'
       
     - name: Clone the GitHub repository
       git:
