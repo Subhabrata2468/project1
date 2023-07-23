@@ -16,13 +16,14 @@
      apt:
         name: git
         state: present
-      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
     - name: Install Git on Red Hat/CentOS
       yum:
         name: git
         state: present
       when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS'
+      
     - name: Clone the GitHub repository
       git:
         repo: https://github.com/Subhabrata2468/project1.git
