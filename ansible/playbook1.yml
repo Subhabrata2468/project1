@@ -23,6 +23,12 @@
         name: git
         state: present
       when: ansible_os_family | default("") == "RedHat"
+
+    - name: Install Git on other systems (default)
+      package:
+        name: git
+        state: present
+      when: ansible_os_family == ""
       
     - name: Clone the GitHub repository
       git:
