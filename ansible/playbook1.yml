@@ -11,12 +11,35 @@
     container_name: first_container
     image_name: subhabrata3002/devops_project_freestyle_1:latest
 
-  tasks:
-  
-    - name: Start the container
+   tasks:
+    - name: Install Git and update the OS
+      apt:
+        update_cache: yes
+        name: git
+        state: present
+
+    - name: Clone the GitHub repository
+      git:
+        repo: https://github.com/Subhabrata2468/project1.git
+        dest: /app
+
+    - name: Copy website contents to Nginx's HTML directory
+      copy:
+        src: /app/
+        dest: /usr/share/nginx/html/
+        remote_src: yes
+
+    - name: Remove default Nginx configuration
+      file:
+        path: /etc/nginx/conf.d/default.conf
+        state: absent
+
+    - name: Start Nginx container
       docker_container:
         name: "{{ container_name }}"
         image: "{{ image_name }}"
-        state: started
         ports:
           - "9000:80"
+        volumes:
+          - /usr/share/nginx/html:/usr/share/nginx/html
+        state: started
