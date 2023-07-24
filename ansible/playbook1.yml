@@ -17,7 +17,7 @@
         name: python3-dnf   # The package name you want to install.
         state: present      # Ensure the package is present (installed).
         
-    - name: git a package using DNF
+    - name: Install git a package using DNF
       dnf:
         name: git
         state: present
