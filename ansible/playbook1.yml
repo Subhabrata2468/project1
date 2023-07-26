@@ -3,7 +3,7 @@
   hosts: slave
   user: root
   become: yes
-  gather_facts: no
+  gather_facts: yes
   connection: ssh
 
   vars:
