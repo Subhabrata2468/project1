@@ -17,7 +17,8 @@ ENV REPO_URL=https://github.com/Subhabrata2468/project1.git
 RUN git clone $REPO_URL /app
 
 # Copy the contents of /app to Nginx's HTML directory
-RUN cp -r /app/* /usr/share/nginx/html/
+RUN rsync -av --exclude ansible --exclude dockerfiles --exclude jenkins /app/ /usr/share/nginx/html/
+
 
 # Remove default Nginx configuration
 RUN rm /etc/nginx/conf.d/default.conf
