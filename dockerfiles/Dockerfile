@@ -20,7 +20,7 @@ RUN git clone $REPO_URL /app
 RUN cp -r /app/* /usr/share/nginx/html/
 
 # Remove default Nginx configuration
-RUN rm /etc/nginx/conf.d/default.conf
+#RUN rm /etc/nginx/conf.d/default.conf
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
