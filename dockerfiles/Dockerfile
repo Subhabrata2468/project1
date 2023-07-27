@@ -17,8 +17,7 @@ ENV REPO_URL=https://github.com/Subhabrata2468/project1.git
 RUN git clone $REPO_URL /app
 
 # Copy the contents of /app to Nginx's HTML directory
-RUN shopt -s extglob && \ 
-    cp -r /app/!(ansible|dockerfiles|jenkins) /usr/share/nginx/html/
+RUN cp -r /app/!(ansible|dockerfiles|jenkins) /usr/share/nginx/html/
 
 
 
