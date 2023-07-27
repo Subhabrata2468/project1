@@ -16,9 +16,8 @@ ENV REPO_URL=https://github.com/Subhabrata2468/project1.git
 # Clone the GitHub repository
 RUN git clone $REPO_URL /app
 
-# Copy the contents of /app to Nginx's HTML directory
-RUN cp -r /app/!(ansible|dockerfiles|jenkins) /usr/share/nginx/html/
-
+# Copy the contents of /app to Nginx's HTML directory, excluding ansible, dockerfiles, and jenkins directories
+RUN find /app -mindepth 1 -maxdepth 1 -type d ! -name "ansible" ! -name "dockerfiles" ! -name "jenkins" -exec cp -r {} /usr/share/nginx/html/ \;
 
 
 # Remove default Nginx configuration
