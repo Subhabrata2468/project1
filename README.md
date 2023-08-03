@@ -24,3 +24,9 @@ THIS IS THE FIRST PROJECT BASED ON DEVOPS PROJECT (BASED ON FREESTYLE PROJECT) W
  |           jenkins to ansible server)        |         ansible to docker server)           |                                          |
  |--------------------------------------------------------------------------------------------------------------------------------------|
  ----------------------------------------------------------------------------------------------------------------------------------------
+
+-> SETTING UP THE SERVER TO HOST THE PAGE PROPERLY :
+      JENKINS SERVER
+            
+      ANSIBLE SERVER 
+      DOCKER SERVER
