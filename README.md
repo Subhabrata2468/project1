@@ -1,38 +1,28 @@
-if any doubt arises please check the video given below :
-https://github.com/Subhabrata2468/project1/issues/2#issue-1837289925
 
+# DEVOPS PROJECT (BASED ON FREESTYLE PROJECT) ->>1
+#### REQUIRMENTS
+1. AWS EC2 INSTANCE AS THE CLOUD PROVIDER
+1. A WEBPAGE CREATE BY FRIEND
+1. FILES AND FOLDER THAT ARE PRESENT IN GITHUB 
+1. THREE EC2 INSTANCES
+    -  JENKINS SERVER - HELPS TO AUTOMATE ANSIBLE AND DOCKER SERVER
+    -  ANSIBLE SERVER - TO GIVE COMMANDS TO DOCKER PRESENT IN DOCKER SERVER, HOW TO MAINTAIN THE DOCKER CONTAINER
+    -  DOCKER SERVER  - FOR CONTAINER MANAGEMENT
+1. MAIN REQUIRMENTS OF EACH SERVERS
 
-THIS IS THE FIRST PROJECT BASED ON DEVOPS PROJECT (BASED ON FREESTYLE PROJECT) WHERE I USE
--> AWS EC2 INSTANCE AS THE CLOUD PROVIDER
--> A WEBPAGE CREATE BY FRIEND (BASED ON "An esports event page where people can see upcoming events and chief guests and can even register for upcoming events")
--> FILES AND FOLDER THAT ARE PRESENT IN GITHUB 
--> THREE EC2 INSTANCES
-      -> JENKINS SERVER - HELPS TO AUTOMATE ANSIBLE AND DOCKER SERVER
-      -> ANSIBLE SERVER - TO GIVE COMMANDS TO DOCKER PRESENT IN DOCKER SERVER, HOW TO MAINTAIN THE DOCKER CONTAINER
-      -> DOCKER SERVER  - FOR CONTAINER MANAGEMENT
-      -> 
+    | JENKINS SERVER   | ANSIBLE SERVER | DOCKER SERVER |
+    |---|---|---|
+    | *set name*  | *set name* | *set name* |
+    | *install java11 (only)* | *install docker* | *install docker* |
+    | *install git* | *docker login* | *docker login* |
+    | *install jenkins* | *instll ansible* | |
+    | * ssh-keygen(connection between jenkins to ansible server)* | *ssh-keygen(connextion between ansible to docker server)* | |
 
--> REQUIRMENTS :
- ----------------------------------------------------------------------------------------------------------------------------------------
- | JENKINS SERVER                              |  ANSIBLE SERVER                             |   DOCKER SERVER                          |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- | 1.SET NAME                                  | 1.SETNAME                                   | 1.SETNAME                                |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- | 1.INSTALL JAVA 11 (ONLY)                    | 2.INSTALL DOCKER                            | 2.INSTALL DOCKER                         |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- | 2.INSTALL GIT                               | 3.DOCKER LOGIN                              |  3.DOCKER LOGIN                          |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- | 3.INSTALL JENKINS                           | 4.INSTALL ANSIBLE                           |                                          |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- | 4 ssh-keygen(connection between             | 5. ssh-keygen(connextion between            |                                          |
- |           jenkins to ansible server)        |         ansible to docker server)           |                                          |
- |--------------------------------------------------------------------------------------------------------------------------------------|
- ----------------------------------------------------------------------------------------------------------------------------------------
+1.SETTING UP THE SERVER TO HOST THE PAGE PROPERLY
 
--> SETTING UP THE SERVER TO HOST THE PAGE PROPERLY :
-      Jenkins (amazon linux 2 )
-
-1.	[ec2-user@ip-172-31-39-46 ~]$ sudo hostnamectl set-hostname Jenkins
+ Jenkins (amazon linux 2 )
+```bash
+1.  [ec2-user@ip-172-31-39-46 ~]$ sudo hostnamectl set-hostname Jenkins
 2.	[ec2-user@ip-172-31-39-46 ~]$ exit
 3.	[ec2-user@jenkins ~]$ sudo yum update -y
 4.	[ec2-user@jenkins ~]$ sudo yum install git -y
@@ -108,14 +98,9 @@ THIS IS THE FIRST PROJECT BASED ON DEVOPS PROJECT (BASED ON FREESTYLE PROJECT) W
       (JUMP 2) ALL THE WORK OF JENKINS SERVER IS DONE , NOW GO TO DOCKER SERVER
       [go to docker server start from step 1 to 21]
 21.	End
-
-
-
-
-
-Ansible (amazon Linux 2 )
-
-
+```
+ANSIBLE (amazon linux 2 )
+```bash
 1.	[ec2-user@ip-172-31-33-252 ~]$ sudo hostnamectl set-hostname ansible
 2.	[ec2-user@ip-172-31-33-252 ~]$ exit
 3.	[ec2-user@ansible ~]$ sudo yum update -y
@@ -208,11 +193,9 @@ Ansible (amazon Linux 2 )
 21.	[ec2-user@ansible ~]$ mkdir docker
       ALL THE WORK IS DONE ON ANSIBLE SERVER
 22.	end
-
-
-
-Docker (amazon red hat )
-
+```
+Docker (amazon linux 2 )
+```bash
 1.	[ec2-user@ip-172-31-37-224 ~]$ sudo hostnamectl set-hostname docker
 2.	[ec2-user@ip-172-31-37-224 ~]$ exit
 3.	[ec2-user@docker ~]$ sudo yum update -y
@@ -258,4 +241,4 @@ Docker (amazon red hat )
       [go to ansible server ans=d start from step 15 to 21]
       ALL THE WORK IS DONE IN DOCKER SERVER
 22.	END 
-
+```
