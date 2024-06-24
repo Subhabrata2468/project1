@@ -1,5 +1,8 @@
-
 # DEVOPS PROJECT (BASED ON FREESTYLE PROJECT) ->>1
+<!--- demo --->
+<div align="center">
+    <img src="https://github.com/Subhabrata2468/project1/blob/project1/DEVOPS%20PROJECT1%20DIAGRAM%20(1).gif" alt="gif">
+</div>
 #### REQUIRMENTS
 1. AWS EC2 INSTANCE AS THE CLOUD PROVIDER
 1. A WEBPAGE CREATE BY FRIEND
