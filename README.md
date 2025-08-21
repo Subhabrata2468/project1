@@ -12,14 +12,19 @@
     -  ANSIBLE SERVER - TO GIVE COMMANDS TO DOCKER PRESENT IN DOCKER SERVER, HOW TO MAINTAIN THE DOCKER CONTAINER
     -  DOCKER SERVER  - FOR CONTAINER MANAGEMENT
 1. MAIN REQUIRMENTS OF EACH SERVERS
+---
 
-    | JENKINS SERVER   | ANSIBLE SERVER | DOCKER SERVER |
-    |---|---|---|
-    | *set name*  | *set name* | *set name* |
-    | *install java11 (only)* | *install docker* | *install docker* |
-    | *install git* | *docker login* | *docker login* |
-    | *install jenkins* | *instll ansible* | |
-    | * ssh-keygen(connection between jenkins to ansible server)* | *ssh-keygen(connextion between ansible to docker server)* | |
+## 🔹 Server Roles & Setup
+
+| Jenkins Server                | Ansible Server               | Docker Server      |
+|-------------------------------|-------------------------------|--------------------|
+| Set hostname                  | Set hostname                  | Set hostname       |
+| Install **Java 11** (only)    | Install **Docker**             | Install **Docker** |
+| Install **Git**               | Run **docker login**           | Run **docker login** |
+| Install **Jenkins**           | Install **Ansible**            |                    |
+| Generate SSH keys for connection to Ansible server | Generate SSH keys for connection to Docker server |                    |
+
+---
 
 1.SETTING UP THE SERVER TO HOST THE PAGE PROPERLY
 
